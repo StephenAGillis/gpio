@@ -44,3 +44,4 @@ except KeyboardInterrupt:
 
     GPIO.cleanup()
 # test 2
+
