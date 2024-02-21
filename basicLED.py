@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 # Define the GPIO pin to use
-pin_number = 7  # Change this to the desired pin number
+pin_number = 19  # Change this to the desired pin number
 
 # Set up the GPIO pin as an output
 GPIO.setup(pin_number, GPIO.OUT)
