@@ -34,7 +34,7 @@ try:
         time.sleep(1)
 
     # Set pins back to input
-    for num in array:     
+    for num in array:
         GPIO.setup(num, GPIO.IN)
         direction, state = get_direction_and_state(num)
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
