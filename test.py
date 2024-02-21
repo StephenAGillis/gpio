@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 # References GPIO pins by their physical pin numbers.
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 def get_direction_and_state(pin_num):
     direction = "Out" if GPIO.gpio_function(pin_num) == GPIO.OUT else "In"
