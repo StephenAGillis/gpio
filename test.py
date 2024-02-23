@@ -36,14 +36,15 @@ def set_reconfigure_pins():
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
 
-
-array = [13,19,26]
-value = 7
-
-try:
+def test_leds():
     configure_pins()
     set_high_and_low()
     set_reconfigure_pins()
+
+array = [13,19,26]
+
+try:
+    test_leds()
 
 except KeyboardInterrupt:
 
