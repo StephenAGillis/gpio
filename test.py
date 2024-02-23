@@ -16,7 +16,7 @@ def configure_pins():
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
 
-def set_high_and_low()
+def set_high_and_low():
     for num in array:
         direction, state = get_direction_and_state(num)
         GPIO.output(num, GPIO.HIGH)
