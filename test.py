@@ -9,10 +9,13 @@ def get_direction_and_state(pin_num):
     state = GPIO.input(pin_num)
     return direction, state
 
+def configure_pins():
+
+
+array = [13,19,26]
+value = 7
+
 try:
-
-    array = [13,19,26]
-
     # Configure pins, set to output
     for num in array:
         GPIO.setup(num, GPIO.OUT)
@@ -43,5 +46,3 @@ try:
 except KeyboardInterrupt:
 
     GPIO.cleanup()
-# test 2
-
