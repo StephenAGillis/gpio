@@ -52,9 +52,9 @@ def set_pin_output(x):
 pins = [13, 19, 26]
 
 try:
-    configure_pins(pins)
+    configure_pins()
     set_high_and_low(pins)
-    disable_pins(pins)
+    disable_pins()
     
 except KeyboardInterrupt:
 
