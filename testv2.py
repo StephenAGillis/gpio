@@ -66,7 +66,9 @@ def full_test():
     set_reconfigure_pins()
 
 
-array = [13,19,26]
+GPIO.setup(13, GPIO.OUT)
+GPIO.setup(19, GPIO.OUT)
+GPIO.setup(26, GPIO.OUT)
 
 try:
   pin_state(13)
