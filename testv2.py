@@ -9,7 +9,7 @@ def get_direction_and_state(x):
     state = GPIO.input(x)
     print(f"Pin # {x} is set to {direction}, state: {state}")
 
-def configure_pins(x):
+def configure_pins():
     print("Entered configure_pins loop")
     for num in pins:
         GPIO.setup(num, GPIO.OUT)
