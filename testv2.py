@@ -28,6 +28,8 @@ def set_high_and_low():
     for num in pins:
         GPIO.output(num, GPIO.HIGH)
         time.sleep(1)
+
+        get_direction_and_state(num)
         
         GPIO.output(num, GPIO.LOW)
         time.sleep(1)
