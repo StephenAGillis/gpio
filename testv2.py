@@ -57,6 +57,7 @@ def full_test():
     set_high_and_low()
     set_reconfigure_pins()
 
+pins = [13, 19, 26]
 
 try:
     configure_pins()
