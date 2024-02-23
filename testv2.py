@@ -49,12 +49,15 @@ def set_pin_output(x):
     GPIO.setup(x, GPIO.OUT)
     time.sleep(1)
     
-pins = [13, 19, 26]
+led_pins = [13, 19, 26]
+rows = [18, 23, 24, 25] # top to bottom
+cols = [12, 16, 20, 21] # left to right
 
 try:
-    configure_pins(pins)
-    set_high_and_low(pins)
-    disable_pins(pins)
+    configure_pins(rows)
+    configure_pins(led_pins)
+    set_high_and_low(led_pins)
+    disable_pins(led_pins)
     
 except KeyboardInterrupt:
 
