@@ -9,16 +9,16 @@ def get_direction_and_state(x):
     state = GPIO.input(x)
     print(f"Pin # {x} is set to {direction}, state: {state}")
 
-def configure_pins():
+def configure_pins(x):
     print("Entered configure_pins loop")
-    for num in pins:
+    for num in x:
         GPIO.setup(num, GPIO.OUT)
         get_direction_and_state(num)
         time.sleep(1)
 
-def disable_pins():
+def disable_pins(x):
     print("Entered disable_pins loop")
-    for num in pins:
+    for num in x:
         GPIO.setup(num, GPIO.IN)
         get_direction_and_state(num)
         time.sleep(1)
@@ -52,9 +52,9 @@ def set_pin_output(x):
 pins = [13, 19, 26]
 
 try:
-    configure_pins()
+    configure_pins(pins)
     set_high_and_low(pins)
-    disable_pins()
+    disable_pins(pins)
     
 except KeyboardInterrupt:
 
