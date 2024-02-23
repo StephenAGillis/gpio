@@ -4,54 +4,46 @@ import time
 # References GPIO pins by their physical pin numbers.
 GPIO.setmode(GPIO.BCM)
 
-def get_direction_and_state(pin_num):
-    direction = "Out" if GPIO.gpio_function(pin_num) == GPIO.OUT else "In"
-    state = GPIO.input(pin_num)
-    return direction, state
+def get_direction_and_state(x):
+    direction = "Out" if GPIO.gpio_function(x) == GPIO.OUT else "In"
+    state = GPIO.input(x)
+    print(f"Pin # {x} is set to {direction}, state: {state}")
 
 def configure_pins():
-    for num in array:
+    print("Entered configure_pins loop")
+    for num in pins:
         GPIO.setup(num, GPIO.OUT)
-        direction, state = get_direction_and_state(num)
-        print(f"Pin # {num} is set to {direction}, state: {state}\n")
+        get_direction_and_state(num)
         time.sleep(1)
 
+def disable_pins():
+    print("Entered disable_pins loop")
+    for num in pins:
+        GPIO.setup(num, GPIO.IN)
+        get_direction_and_state(num)
+        time.sleep(1)
+        
 def set_high_and_low():
-    for num in array:
-        direction, state = get_direction_and_state(num)
+    print("Entered set_high_and_low loop")
+    for num in pins:
         GPIO.output(num, GPIO.HIGH)
-        direction, state = get_direction_and_state(num)
-        print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
         
         GPIO.output(num, GPIO.LOW)
-        direction, state = get_direction_and_state(num)
-        print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
 
-def set_reconfigure_pins():
-    for num in array:
-        GPIO.setup(num, GPIO.IN)
-        direction, state = get_direction_and_state(num)
-        print(f"Pin # {num} is set to {direction}, state: {state}\n")
-        time.sleep(1)
-
-def set_led_color(pin):
-    state = GPIO.input(pin)
+def set_led_color(x):
+    GPIO.output(x, GPIO.HIGH)
+    time.sleep(1)
     
-    GPIO.output(pin, GPIO.HIGH)
+    GPIO.output(x, GPIO.LOW)
     time.sleep(1)
 
-    print(f"State = {state}\n") 
-    
-    GPIO.output(pin, GPIO.LOW)
-    time.sleep(1)
-
-def pin_input(pin):
+def pin_input(x):
     GPIO.setup(pin, GPIO.IN)
     time.sleep(1)
 
-def pin_output(pin):
+def pin_output(x):
     GPIO.setup(pin, GPIO.OUT)
     time.sleep(1)
   
@@ -66,17 +58,10 @@ def full_test():
     set_reconfigure_pins()
 
 
-GPIO.setup(13, GPIO.OUT)
-GPIO.setup(19, GPIO.OUT)
-GPIO.setup(26, GPIO.OUT)
-
 try:
-  pin_state(13)
-  pin_output(13)
-  set_led_color(13)
-  pin_state(13)
-  pin_input(13)
-  pin_state(13)
+    configure_pins()
+    set_high_and_low()
+    disable_pins()    
 
 except KeyboardInterrupt:
 
