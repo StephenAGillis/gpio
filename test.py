@@ -10,38 +10,40 @@ def get_direction_and_state(pin_num):
     return direction, state
 
 def configure_pins():
-
-
-array = [13,19,26]
-value = 7
-
-try:
-    # Configure pins, set to output
     for num in array:
         GPIO.setup(num, GPIO.OUT)
         direction, state = get_direction_and_state(num)
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
 
-    # Set to HIGH or LOW
+def set_high_and_low()
     for num in array:
         direction, state = get_direction_and_state(num)
         GPIO.output(num, GPIO.HIGH)
         direction, state = get_direction_and_state(num)
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
-
+        
         GPIO.output(num, GPIO.LOW)
         direction, state = get_direction_and_state(num)
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
 
-    # Set pins back to input
+def set_reconfigure_pins():
     for num in array:
         GPIO.setup(num, GPIO.IN)
         direction, state = get_direction_and_state(num)
         print(f"Pin # {num} is set to {direction}, state: {state}\n")
         time.sleep(1)
+
+
+array = [13,19,26]
+value = 7
+
+try:
+    configure_pins()
+    set_high_and_low()
+    set_reconfigure_pins()
 
 except KeyboardInterrupt:
 
