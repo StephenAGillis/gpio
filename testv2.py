@@ -41,31 +41,21 @@ def set_led_color(x):
     GPIO.output(x, GPIO.LOW)
     time.sleep(1)
 
-def pin_input(x):
-    GPIO.setup(pin, GPIO.IN)
+def set_pin_input(x):
+    GPIO.setup(x, GPIO.IN)
     time.sleep(1)
 
-def pin_output(x):
-    GPIO.setup(pin, GPIO.OUT)
-    time.sleep(1)
-  
-def pin_state(pin):
-    state = GPIO.input(pin)
-    print(f"State = {state}\n")  
+def set_pin_output(x):
+    GPIO.setup(x, GPIO.OUT)
     time.sleep(1)
     
-def full_test():
-    configure_pins()
-    set_high_and_low()
-    set_reconfigure_pins()
-
 pins = [13, 19, 26]
 
 try:
-    configure_pins()
-    set_high_and_low()
-    disable_pins()    
-
+    set_pin_output(pins[0])
+    set_led_color(pins[0])
+    set_pin_input(pins[0])
+    
 except KeyboardInterrupt:
 
     GPIO.cleanup()
