@@ -40,9 +40,12 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     while True:
-        for i in rows:
+        for i in led:
             set_output(i)
-
+            set_high(i)
+            sleep.time(1)
+            set_input(i)
+            set_low(i)
         break;
             
     
