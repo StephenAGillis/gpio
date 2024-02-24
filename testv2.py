@@ -42,15 +42,14 @@ try:
     index = 0
     while True:
         current_number = led[index]
-        print("Current number:", current_number)
-    
-        # Increment index to cycle through numbers
-        index = (index + 1) % len(led)
+
         set_output(led[index])
         set_high(led[index])
         time.sleep(2)
         set_low(led[index])
         set_low(led[index])
+
+        index += 1
         
         user_input = input("Press Enter to continue or 'q' to quit: ")
         if user_input.lower() == 'q':
