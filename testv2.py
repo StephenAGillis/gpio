@@ -39,14 +39,13 @@ cols = [12, 16, 20, 21] # left to right
 # for i in range(len(led_pins)):
 
 try:
-    while True:
-        for i in led:
-            set_output(i)
-            set_high(i)
-            time.sleep(1)
-            set_low(i)
-            set_input(i)
-    return false
+
+    for i in led:
+        set_output(i)
+        set_high(i)
+        time.sleep(1)
+        set_low(i)
+        set_input(i)
             
     
 except KeyboardInterrupt:
