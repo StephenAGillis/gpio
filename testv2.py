@@ -14,7 +14,7 @@ def print_Volts(x):
 
 def set_high(x):
     GPIO.output(x, GPIO.HIGH)
-    state = GPIO.intput(x)
+    state = GPIO.input(x)
     print(f"pin {x}'s state: {state} ")
 
 def set_low(x):
