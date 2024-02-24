@@ -44,8 +44,8 @@ try:
             set_output(i)
             set_high(i)
             time.sleep(1)
-            set_input(i)
             set_low(i)
+            set_input(i)
         break;
             
     
