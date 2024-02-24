@@ -40,13 +40,22 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     while True:
-        set_output(led)        
-        set_high(led)
-        time.sleep(2)
-        set_low(led)
-        set_input(led)
-        break
+        current_number = led[index]
+        print("Current number:", current_number)
     
+        # Increment index to cycle through numbers
+        index = (index + 1) % len(numbers)
+        set_output(led[index])
+        set_high(led[index])
+        time.sleep(2)
+        set_low(led[index])
+        set_low(led[index])
+        
+        user_input = input("Press Enter to continue or 'q' to quit: ")
+        if user_input.lower() == 'q':
+            print("Exiting...")
+            break
+            
 except KeyboardInterrupt:
 
     GPIO.cleanup()
