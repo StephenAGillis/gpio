@@ -40,7 +40,7 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     while True:
-        for i in led:
+        while led:
             print(i)
         input = input()
         if input == "y":
