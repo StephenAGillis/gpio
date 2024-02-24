@@ -42,6 +42,7 @@ try:
     while True:
         for i in led:
             print(i)
+         break   
     
 except KeyboardInterrupt:
 
