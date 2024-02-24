@@ -45,7 +45,7 @@ try:
         print("Current number:", current_number)
     
         # Increment index to cycle through numbers
-        index = (index + 1) % len(numbers)
+        index = (index + 1) % len(led)
         set_output(led[index])
         set_high(led[index])
         time.sleep(2)
