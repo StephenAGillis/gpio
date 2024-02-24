@@ -42,6 +42,8 @@ try:
     while True:
         for i in rows:
             set_output(i)
+
+        break;
             
     
 except KeyboardInterrupt:
