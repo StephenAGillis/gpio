@@ -40,7 +40,7 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     while True:
-        for i in range(rows)
+        for i in range(rows):
             set_output(rows)
             
     
