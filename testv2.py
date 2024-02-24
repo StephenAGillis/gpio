@@ -43,7 +43,7 @@ try:
         for i in led:
             set_output(i)
             set_high(i)
-            sleep.time(1)
+            time.sleep(1)
             set_input(i)
             set_low(i)
         break;
