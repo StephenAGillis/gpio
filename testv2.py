@@ -46,7 +46,7 @@ try:
             time.sleep(1)
             set_low(i)
             set_input(i)
-        return false
+    return false
             
     
 except KeyboardInterrupt:
