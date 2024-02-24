@@ -39,6 +39,7 @@ cols = [12, 16, 20, 21] # left to right
 # for i in range(len(led_pins)):
 
 try:
+    index = 0
     while True:
         current_number = led[index]
         print("Current number:", current_number)
