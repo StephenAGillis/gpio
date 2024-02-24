@@ -51,7 +51,7 @@ try:
 
     set_high(led[2])
     time.sleep(2)
-    set_low(led[2)
+    set_low(led[2])
 
     set_input(led[1])
     
