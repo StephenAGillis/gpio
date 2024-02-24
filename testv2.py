@@ -40,9 +40,19 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     set_output(led[1])
+
+    set_high(led[0])
+    time.sleep(2)
+    set_low(led[0])
+    
     set_high(led[1])
     time.sleep(2)
     set_low(led[1])
+
+    set_high(led[2])
+    time.sleep(2)
+    set_low(led[2)
+
     set_input(led[1])
     
 except KeyboardInterrupt:
