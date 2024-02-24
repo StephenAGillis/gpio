@@ -40,11 +40,12 @@ cols = [12, 16, 20, 21] # left to right
 
 try:
     while True:
-        while led:
-            print(i)
-        input = input()
-        if input == "y":
-            break 
+        set_output(led)        
+        set_high(led)
+        time.sleep(2)
+        set_low(led)
+        set_input(led)
+        break
     
 except KeyboardInterrupt:
 
