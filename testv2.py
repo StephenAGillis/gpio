@@ -41,7 +41,7 @@ cols = [12, 16, 20, 21] # left to right
 try:
     while True:
         for i in rows:
-            set_output(rows)
+            set_output(i)
             
     
 except KeyboardInterrupt:
