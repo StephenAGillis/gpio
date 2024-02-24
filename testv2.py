@@ -42,7 +42,9 @@ try:
     while True:
         for i in led:
             print(i)
-        break   
+        input = input()
+        if input == "y":
+            break 
     
 except KeyboardInterrupt:
 
