@@ -39,7 +39,9 @@ cols = [12, 16, 20, 21] # left to right
 # for i in range(len(led_pins)):
 
 try:
+    set_output(led[0])
     set_output(led[1])
+    set_output(led[2])
 
     set_high(led[0])
     time.sleep(2)
@@ -53,8 +55,9 @@ try:
     time.sleep(2)
     set_low(led[2])
 
+    set_input(led[0])
     set_input(led[1])
-    
+    set_input(led[2])
 except KeyboardInterrupt:
 
     GPIO.cleanup()
