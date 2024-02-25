@@ -77,7 +77,7 @@ try:
     for led in leds:
         pin = led["pin"]
         mode = led["mode"]
-        value = led["value"]
+        value = "LOW"
         
         GPIO.setup(pin, mode)
         GPIO.setup(pin, value)
@@ -85,6 +85,7 @@ try:
 
     for led in leds:
         pin = led["pin"]
+        mode = "
         GPIO.output(pin, GPIO.LOW)
         sleep()
 
