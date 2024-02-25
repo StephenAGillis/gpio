@@ -77,9 +77,9 @@ cols = [12, 16, 20, 21] # left to right
 try:
     set_output(leds)
     sleep()
-    set_leds("HIGH", leds)
+    set_leds("HIGH", leds[1])
     sleep()
-    set_leds("LOW", leds)
+    set_leds("LOW", leds[1])
     sleep()
     set_input(leds)
     
