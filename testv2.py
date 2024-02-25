@@ -48,26 +48,18 @@ def power_row(x):
     pass
 
 def sleep():
-    time.sleep(3)
+    time.sleep(2)
 
-def set_rows(x, row):
-    if x == "HIGH":
-        for i in row:
-            GPIO.output(i, GPIO.HIGH)
-    if x == "LOW":
-        for i in row:
-            GPIO.output(i, GPIO.LOW)
-
-def set_leds(x, led):
-    if x == "HIGH":
-        for i in led:
+def set_state(x, list)
+    if x == "HIGH"
+        for i in list:
             GPIO.output(i, GPIO.HIGH)
             sleep()
-    if x == "LOW":
-        for i in led:
+    if x == "LOW"
+        for i in list:
             GPIO.output(i, GPIO.LOW)
             sleep()
-    
+            
 leds = [13, 19, 26] # R G B settings
 rows = [18, 23, 24, 25] # top to bottom
 cols = [12, 16, 20, 21] # left to right
@@ -77,9 +69,9 @@ cols = [12, 16, 20, 21] # left to right
 try:
     set_output(leds)
     sleep()
-    set_leds("HIGH", leds)
+    set_state("HIGH", leds)
     sleep()
-    set_leds("LOW", leds)
+    set_state("LOW", leds)
     sleep()
     set_input(leds)
     
