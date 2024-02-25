@@ -84,7 +84,8 @@ try:
         sleep()
 
     for led in leds:
-        GPIO.output(leds, GPIO.LOW)
+        pin = led["pin"]
+        GPIO.output(pin, GPIO.LOW)
         sleep()
 
     
