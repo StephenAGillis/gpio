@@ -51,11 +51,11 @@ def sleep():
     time.sleep(2)
 
 def set_state(x, list):
-    if x == "HIGH"
+    if x == "HIGH":
         for i in list:
             GPIO.output(i, GPIO.HIGH)
             sleep()
-    if x == "LOW"
+    if x == "LOW":
         for i in list:
             GPIO.output(i, GPIO.LOW)
             sleep()
