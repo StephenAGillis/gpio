@@ -46,7 +46,7 @@ def set_rows(x, row):
         for i in row:
             GPIO.output(i, GPIO.LOW)
 
-sef set_leds(x, led):
+def set_leds(x, led):
     if x == "HIGH":
         for i in led:
             GPIO.output(i, GPIO.HIGH)
