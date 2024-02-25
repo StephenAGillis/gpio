@@ -32,29 +32,31 @@ def set_output(x):
     mode = GPIO.gpio_function(x)
     print(f"pin {x}'s mode : OUT")
 
-led = [13, 19, 26] # R G B settings
+def power_row(x):
+    pass
+
+def sleep():
+    time.sleep(3)
+
+def set_rows(x, row):
+    if x == "HIGH"
+        for i in row:
+            GPIO.output(i, GPIO.HIGH)
+    if x == "LOW"
+        for i in row:
+            GPIO.output(i, GPIO.LOW)
+    
+leds = [13, 19, 26] # R G B settings
 rows = [18, 23, 24, 25] # top to bottom
 cols = [12, 16, 20, 21] # left to right
 
 # for i in range(len(led_pins)):
 
 try:
-    index = 0
     while True:
-        current_number = led[index]
-
-        set_output(led[index])
-        set_high(led[index])
-        time.sleep(2)
-        set_low(led[index])
-        set_low(led[index])
-
-        index += 1
-        
-        user_input = input("Press Enter to continue or 'q' to quit: ")
-        if user_input.lower() == 'q':
-            print("Exiting...")
-            break
+        set_rows(HIGH, rows)
+        for col in cols:
+            set_low(col)
             
 except KeyboardInterrupt:
 
