@@ -50,30 +50,44 @@ def power_row(x):
 def sleep():
     time.sleep(2)
 
-def set_state(x, list):
+def set_state(x, pin):
     if x == "HIGH":
-        for i in list:
-            GPIO.output(i, GPIO.HIGH)
-            sleep()
+        GPIO.output(pin, GPIO.HIGH)
+        sleep()
     if x == "LOW":
-        for i in list:
-            GPIO.output(i, GPIO.LOW)
-            sleep()
+        GPIO.output(pin, GPIO.LOW)
+        sleep()
+        
             
-leds = [13, 19, 26] # R G B settings
-rows = [18, 23, 24, 25] # top to bottom
-cols = [12, 16, 20, 21] # left to right
+leds = [{"pin": 13, "mode": GPIO.OUT, "value": GPIO.HIGH},
+        {"pin": 19, "mode": GPIO.OUT, "value": GPIO.HIGH},
+        {"pin": 26, "mode": GPIO.OUT, "value": GPIO.HIGH}]    # R G B settings
 
-# for i in range(len(led_pins)):
+rows = [{"pin": 18, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 23, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 24, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 25, "mode": GPIO.OUT, "value": GPIO.LOW}]    # top to bottom
+
+cols = [{"pin": 12, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 16, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 20, "mode": GPIO.OUT, "value": GPIO.LOW},
+        {"pin": 21, "mode": GPIO.OUT, "value": GPIO.LOW}]    # left to right
 
 try:
-    set_output(leds)
-    sleep()
-    set_state("HIGH", leds)
-    sleep()
-    set_state("LOW", leds)
-    sleep()
-    set_input(leds)
+    for led in leds:
+        pin = led["pin"]
+        mode = led["mode"]
+        value = led["value"]
+        
+        GPIO.setup(pin, mode)
+        GPIO.setup(pin, value)
+        sleep()
+
+    for led in leds:
+        GPIO.output(leds, GPIO.LOW)
+        sleep()
+
+    
     
             
 except KeyboardInterrupt:
