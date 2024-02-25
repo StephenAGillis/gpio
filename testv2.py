@@ -45,6 +45,16 @@ def set_rows(x, row):
     if x == "LOW"
         for i in row:
             GPIO.output(i, GPIO.LOW)
+
+sef set_leds(x, led):
+    if x == "HIGH"
+        for i in led:
+            GPIO.output(i, GPIO.HIGH)
+            sleep()
+    if x == "LOW"
+        for i in led:
+            GPIO.output(i, GPIO.LOW)
+            sleep()
     
 leds = [13, 19, 26] # R G B settings
 rows = [18, 23, 24, 25] # top to bottom
@@ -53,16 +63,22 @@ cols = [12, 16, 20, 21] # left to right
 # for i in range(len(led_pins)):
 
 try:
-    while True:
-        set_rows(HIGH, rows)
-        for col in cols:
-            set_low(col)
+    set_output(leds)
+    sleep()
+    set_high(leds)
+    sleep()
+    set_input(leds)
+    
             
 except KeyboardInterrupt:
 
     GPIO.cleanup()
 
-
+    #while True:
+     #   set_rows(HIGH, rows)
+      #  for col in cols:
+       #     set_low(col)
+            
 
 
 
