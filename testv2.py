@@ -39,19 +39,19 @@ def sleep():
     time.sleep(3)
 
 def set_rows(x, row):
-    if x == "HIGH"
+    if x == "HIGH":
         for i in row:
             GPIO.output(i, GPIO.HIGH)
-    if x == "LOW"
+    if x == "LOW":
         for i in row:
             GPIO.output(i, GPIO.LOW)
 
 sef set_leds(x, led):
-    if x == "HIGH"
+    if x == "HIGH":
         for i in led:
             GPIO.output(i, GPIO.HIGH)
             sleep()
-    if x == "LOW"
+    if x == "LOW":
         for i in led:
             GPIO.output(i, GPIO.LOW)
             sleep()
