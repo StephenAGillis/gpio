@@ -13,24 +13,28 @@ def print_Volts(x):
     print("Pin voltage: ", x)
 
 def set_high(x):
+    print("set_high")
     for i in x:
         GPIO.output(i, GPIO.HIGH)
         state = GPIO.input(i)
         print(f"pin {x}'s state: {state} ")
 
 def set_low(x):
+    print("set_low")
     for i in x:
         GPIO.output(i, GPIO.LOW)
         state = GPIO.input(i)
         print(f"pin {x}'s state: {state} ")
 
 def set_input(x):
+    print("set_input")
     for i in x:
         GPIO.setup(i, GPIO.IN)
         mode = GPIO.gpio_function(i)
         print(f"pin {x}'s mode: IN") 
 
 def set_output(x):
+    print("set_output")
     for i in x:
         GPIO.setup(i, GPIO.OUT)
         mode = GPIO.gpio_function(i)
