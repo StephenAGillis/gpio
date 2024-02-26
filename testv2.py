@@ -57,27 +57,31 @@ def set_state(x, pin):
     if x == "LOW":
         GPIO.output(pin, GPIO.LOW)
         sleep()
-        
-            
+
 leds = [{"pin": 13, "mode": GPIO.OUT, "value": GPIO.HIGH},
         {"pin": 19, "mode": GPIO.OUT, "value": GPIO.HIGH},
         {"pin": 26, "mode": GPIO.OUT, "value": GPIO.HIGH}]    # R G B settings
 
-rows = [{"pin": 18, "mode": GPIO.OUT, "value": GPIO.LOW},
-        {"pin": 23, "mode": GPIO.OUT, "value": GPIO.LOW},
-        {"pin": 24, "mode": GPIO.OUT, "value": GPIO.LOW},
-        {"pin": 25, "mode": GPIO.OUT, "value": GPIO.LOW}]    # top to bottom
+# Will be output, HIGH channels, top row to bottom row
+rows = [{"pin": 18, "mode": GPIO.OUT, "value": GPIO.HIGH},
+        {"pin": 23, "mode": GPIO.OUT, "value": GPIO.HIGH},
+        {"pin": 24, "mode": GPIO.OUT, "value": GPIO.HIGH},
+        {"pin": 25, "mode": GPIO.OUT, "value": GPIO.HIGH}]
 
-cols = [{"pin": 12, "mode": GPIO.OUT, "value": GPIO.LOW},
-        {"pin": 16, "mode": GPIO.OUT, "value": GPIO.LOW},
-        {"pin": 20, "mode": GPIO.OUT, "value": GPIO.LOW},
+cols = [{"pin": 12, "mode": GPIO.IN, "value": GPIO.LOW},
+        {"pin": 16, "mode": GPIO.IN, "value": GPIO.LOW},
+        {"pin": 20, "mode": GPIO.IN, "value": GPIO.LOW},
         {"pin": 21, "mode": GPIO.OUT, "value": GPIO.LOW}]    # left to right
+
+leds = [13,19,26]
+rows = [18,23,24,24]    # Top to bottom
+cols = [12,16,20,21]     #left to right
 
 try:
     for led in leds:
-        pin = led["pin"]
-        mode = led["mode"]
-        value = "LOW"
+        pin = led
+        mode = GPIO.OUT
+        value = GPIO.HIGH
         
         GPIO.setup(pin, mode)
         GPIO.setup(pin, value)
@@ -85,9 +89,15 @@ try:
 
     for led in leds:
         pin = led["pin"]
-        mode = "
-        GPIO.output(pin, GPIO.LOW)
+        mode = GPIO.LOW
+        value = 
+        GPIO.output(pin, mode)
         sleep()
+
+    for led in leds:
+        pin = led["pin"]
+        mode = 
+        value =
 
     
     
@@ -95,15 +105,7 @@ try:
 except KeyboardInterrupt:
 
     GPIO.cleanup()
-
-    #while True:
-     #   set_rows(HIGH, rows)
-      #  for col in cols:
-       #     set_low(col)
-            
-
-
-
+#{"pin": 13, "mode": GPIO.OUT, "value": GPIO.HIGH}
 
 
 
