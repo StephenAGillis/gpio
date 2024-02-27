@@ -50,7 +50,7 @@ def sleep():
 #  24  [7]  [8]  [9]  [C]
 #  25  [*]  [0]  [#]  [D]
 
-def find_index(x,y):
+def find_index(row_pin, col_pin):
     if x == 18 and y == 12:
         print("button 1 is pushed")
         GPIO.setup(13, GPIO.OUT)
@@ -70,13 +70,17 @@ cols = [12,16,20,21]     #left to right
 
 try:
     while True:
-        GPIO.setup(18, GPIO.OUT)
-        GPIO.output(18, GPIO.HIGH)
-        GPIO.setup(12, GPIO.IN)
-        if GPIO.input(12) == GPIO.HIGH:
-            print("yes")
-            break;
+        for row_pin in rows:
+            GPIO.setup(row_pin, GPIO.OUT)
+            GPIO.output(row_pin, GPIO.HIGH)
 
+            for col_pin in cols:
+                GPIO.setup(col_pin, GPIO.IN)  # Set col_pin as input to detect its state
+                if GPIO.input(col_pin) == GPIO.HIGH:
+                    find_index(row_pin, col_pin)
+
+            GPIO.output(row_pin, GPIO.LOW)
+            GPIO.setup(row_pin, GPIO.IN)
 except KeyboardInterrupt:
 
     GPIO.cleanup()
