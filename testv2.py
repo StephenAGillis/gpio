@@ -57,9 +57,9 @@ def find_index(x,y):
         GPIO.output(13, GPIO.HIGH)
         sleep()
         GPIO.setup(13, GPIO.IN)
-    if x == 18 && y == 16:
+    if x == 18 and y == 16:
         pass
-    if x == 18 && y == 20:
+    if x == 18 and y == 20:
         pass
     
 
