@@ -57,6 +57,7 @@ def find_index(x, y):
         GPIO.output(13, GPIO.HIGH)
         sleep()
         GPIO.setup(13, GPIO.IN)
+        return 0
     if x == 18 and y == 16:
         pass
     if x == 18 and y == 20:
@@ -80,7 +81,6 @@ try:
                 GPIO.setup(col_pin, GPIO.IN)  # Set col_pin as input to detect its state
                 if GPIO.input(col_pin) == GPIO.HIGH:
                     find_index(row_pin, col_pin)
-
             GPIO.output(row_pin, GPIO.LOW)
             GPIO.setup(row_pin, GPIO.IN)
 except KeyboardInterrupt:
