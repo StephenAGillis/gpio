@@ -72,10 +72,12 @@ try:
     while True:
         for i in rows:
             print(f"{i}")
+            sleep()
             GPIO.setup(i, GPIO.OUT)
             GPIO.output(i, GPIO.HIGH)
         
             for j in cols:
+                sleep()
                 print(f"{j}")
                 GPIO.setup(j, GPIO.IN)
                 if GPIO.input(j) == GPIO.HIGH:
