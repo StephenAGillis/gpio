@@ -71,7 +71,7 @@ cols = [12,16,20,21]     #left to right
 try:
     while True:
         for i in rows:
-            GPIo.setup(i, GPIO.OUT)
+            GPIO.setup(i, GPIO.OUT)
             GPIO.output(i, GPIO.HIGH)
         
             for j in cols:
