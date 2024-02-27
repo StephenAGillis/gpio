@@ -71,10 +71,12 @@ cols = [12,16,20,21]     #left to right
 try:
     while True:
         for i in rows:
+            print(f"{i}")
             GPIO.setup(i, GPIO.OUT)
             GPIO.output(i, GPIO.HIGH)
         
             for j in cols:
+                print(f"{j}")
                 GPIO.setup(j, GPIO.IN)
                 if GPIO.input(j) == GPIO.HIGH:
                     find_index(i,j)
