@@ -75,8 +75,9 @@ try:
             GPIO.output(row_pin, GPIO.HIGH)
 
             for col_pin in cols:
-                GPIO.setup(col_pin, GPIO.OUT)  # Set col_pin as input to detect its state
-                if GPIO.input(col_pin) == GPIO.LOW:
+                GPIO.output(col_pin, GPIO.LOW)
+                GPIO.setup(col_pin, GPIO.IN)  # Set col_pin as input to detect its state
+                if GPIO.input(col_pin) == GPIO.HIGH:
                     find_index(row_pin, col_pin)
 
             GPIO.output(row_pin, GPIO.LOW)
