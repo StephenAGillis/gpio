@@ -50,7 +50,7 @@ def sleep():
 #  24  [7]  [8]  [9]  [C]
 #  25  [*]  [0]  [#]  [D]
 
-def find_index(row_pin, col_pin):
+def find_index(x, y):
     if x == 18 and y == 12:
         print("button 1 is pushed")
         GPIO.setup(13, GPIO.OUT)
