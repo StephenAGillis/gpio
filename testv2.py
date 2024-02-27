@@ -72,14 +72,14 @@ try:
     while True:
         for row_pin in rows:
             GPIO.setup(row_pin, GPIO.OUT)
-            GPIO.output(row_pin, GPIO.HIGH)
+            GPIO.output(row_pin, GPIO.LOW)
 
             for col_pin in cols:
                 GPIO.setup(col_pin, GPIO.IN)  # Set col_pin as input to detect its state
                 if GPIO.input(col_pin) == GPIO.LOW:
                     find_index(row_pin, col_pin)
 
-            GPIO.output(row_pin, GPIO.LOW)
+            GPIO.output(row_pin, GPIO.HIGH)
             GPIO.setup(row_pin, GPIO.IN)
 except KeyboardInterrupt:
 
