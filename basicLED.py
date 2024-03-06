@@ -21,7 +21,7 @@ GPIO.setup(green_LED, GPIO.OUT)
 
 GPIO.setup(yellow_button, GPIO.OUT)
 
-def led_color(int color):
+def led_color(color):
     GPIO.output(x, GPIO.HIGH)
     GPIO.output(x, GPIO.HIGH)
     time.sleep(1)
