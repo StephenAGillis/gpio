@@ -5,7 +5,13 @@ import time
 GPIO.setmode(GPIO.BOARD)
 
 # Define the GPIO pin to use
-pin_number = 21  # Change this to the desired pin number
+blue_button = 16
+green_button = 12
+yellow_button = 21
+red_button = 20
+red_LED = 13
+blue_LED = 26
+green_LED = 19
 
 # Set up the GPIO pin as an output
 GPIO.setup(pin_number, GPIO.OUT)
