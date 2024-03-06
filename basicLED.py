@@ -34,7 +34,9 @@ try:
             break
             
         if GPIO.input(green_button) == GPIO.LOW:
+            GPIO.output(green_button, GPIO.HIGH)
             GPIO.output(green_LED, GPIO.HIGH)
+            time.sleep(1)
             print(f"Pin {green_LED} is turned ON.")
 
     
