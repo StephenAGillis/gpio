@@ -23,7 +23,6 @@ GPIO.setup(yellow_button, GPIO.OUT)
 
 def led_color(x):
     GPIO.output(x, GPIO.HIGH)
-    GPIO.output(x, GPIO.HIGH)
     time.sleep(1)
     GPIO.output(x, GPIO.LOW)
     print(f"Pin {x} is turned ON.")
