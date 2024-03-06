@@ -58,11 +58,11 @@ def set_HIGH():
     GPIO.output(yellow_button, GPIO.HIGH)
 
 try:
+
+    set_HIGH()
     
     while True:
-
-        set_HIGH()
-            
+        
         if GPIO.input(green_button) == GPIO.LOW:
             led_color(green_LED)
 
