@@ -21,7 +21,7 @@ GPIO.setup(green_LED, GPIO.OUT)
 
 GPIO.setup(yellow_button, GPIO.OUT)
 
-def green_light
+def green_light():
     GPIO.output(green_button, GPIO.HIGH)
     GPIO.output(green_LED, GPIO.HIGH)
     time.sleep(1)
