@@ -14,19 +14,19 @@ blue_LED = 26
 green_LED = 19
 
 # Set up the GPIO pin as an output
-GPIO.setup(pin_number, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 
 try:
     # Turn the GPIO pin on
-    GPIO.output(pin_number, GPIO.HIGH)
-    printf("Pin {} is turned ON.".format(pin_number))
-    
+    GPIO.output(13, GPIO.HIGH)
+    print(f"Pin {13} is turned ON.")
+
     # Wait for 1 second
     time.sleep(1)
     
     # Turn the GPIO pin off
-    GPIO.output(pin_number, GPIO.LOW)
-    printf("Pin {} is turned OFF."(pin_number))
+    GPIO.output(13, GPIO.LOW)
+    print(f"Pin {13} is turned OFF.")
     
 finally:
     # Clean up the GPIO settings
