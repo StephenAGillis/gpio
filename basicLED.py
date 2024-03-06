@@ -41,7 +41,7 @@ try:
             break
             
         if GPIO.input(green_button) == GPIO.LOW:
-            green_light(green_LED)
+            led_color(green_LED)
 
     
 finally:
