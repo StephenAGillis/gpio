@@ -19,14 +19,14 @@ GPIO.setup(pin_number, GPIO.OUT)
 try:
     # Turn the GPIO pin on
     GPIO.output(pin_number, GPIO.HIGH)
-    print("Pin {} is turned ON.".format(pin_number))
+    printf("Pin {} is turned ON.".format(pin_number))
     
     # Wait for 1 second
     time.sleep(1)
     
     # Turn the GPIO pin off
     GPIO.output(pin_number, GPIO.LOW)
-    print("Pin {} is turned OFF.".format(pin_number))
+    printf("Pin {} is turned OFF."(pin_number))
     
 finally:
     # Clean up the GPIO settings
