@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 # Set up GPIO using BOARD numbering
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 
 # Define the GPIO pin to use
 blue_button = 16
