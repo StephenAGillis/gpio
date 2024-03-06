@@ -18,8 +18,11 @@ green_LED = 19
 interupt = 23
 
 # Set up the GPIO pin as an output
-GPIO.setup(green_button, GPIO.OUT)
+GPIO.setup(interupt, GPIO.OUT)
 GPIO.setup(green_LED, GPIO.OUT)
+GPIO.setup(blue_LED, GPIO.OUT)
+GPIO.setup(red_LED, GPIO.OUT)
+GPIO.setup(yellow_LED, GPIO.OUT)
 
 GPIO.setup(yellow_button, GPIO.OUT)
 
