@@ -19,7 +19,7 @@ GPIO.setup(red_LED, GPIO.OUT)
 
 try:
     
-    while(True){
+    while(True):
 
         if yellow_button.is_pressed:
             GPIO.output(green_LED, GPIO.LOW)
@@ -28,7 +28,6 @@ try:
         if green_button.is_pressed:
             GPIO.output(green_LED, GPIO.HIGH
             print(f"Pin {green_LED} is turned ON.")
-    }
     
 finally:
     # Clean up the GPIO settings
