@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time
+from gpiozero import Button
 
 # Set up GPIO using BOARD numbering
 GPIO.setmode(GPIO.BCM)
