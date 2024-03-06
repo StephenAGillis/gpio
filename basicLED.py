@@ -21,12 +21,12 @@ GPIO.setup(green_LED, GPIO.OUT)
 
 GPIO.setup(yellow_button, GPIO.OUT)
 
-def green_light():
-    GPIO.output(green_button, GPIO.HIGH)
-    GPIO.output(green_LED, GPIO.HIGH)
+def led_color(int x):
+    GPIO.output(x, GPIO.HIGH)
+    GPIO.output(x, GPIO.HIGH)
     time.sleep(1)
-    GPIO.output(green_LED, GPIO.LOW)
-    print(f"Pin {green_LED} is turned ON.")
+    GPIO.output(x, GPIO.LOW)
+    print(f"Pin {x} is turned ON.")
 
 try:
     
@@ -41,7 +41,7 @@ try:
             break
             
         if GPIO.input(green_button) == GPIO.LOW:
-            green_light()
+            green_light(green_LED)
 
     
 finally:
