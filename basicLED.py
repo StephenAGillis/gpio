@@ -25,7 +25,6 @@ try:
 
         GPIO.output(yellow_button, GPIO.HIGH)
         GPIO.output(green_button, GPIO.HIGH)
-        GPIO.output(green_LED, GPIO.LOW)
         time.sleep(0.1)
         
         if GPIO.input(yellow_button) == GPIO.LOW:
