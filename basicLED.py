@@ -10,6 +10,7 @@ blue_button= 16
 green_button = 12
 yellow_button = 21
 red_button = 20
+
 red_LED = 13
 blue_LED = 26
 green_LED = 19
@@ -17,6 +18,7 @@ green_LED = 19
 # Set up the GPIO pin as an output
 GPIO.setup(green_button, GPIO.OUT)
 GPIO.setup(green_LED, GPIO.OUT)
+
 GPIO.setup(yellow_button, GPIO.OUT)
 
 try:
