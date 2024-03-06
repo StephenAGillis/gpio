@@ -14,7 +14,7 @@ red_LED_pin = 13
 blue_LED_pin = 26
 green_LED_pin = 19
 
-green_button = Button(green_button_pin)
+blue_button = Button(blue_button_pin)
 yellow_button = Button(yellow_button_pin)
 
 # Set up the GPIO pin as an output
