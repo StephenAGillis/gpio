@@ -26,7 +26,7 @@ try:
             print(f"Pin {red_LED} is turned OFF.")
             break
         if green_button.is_pressed:
-            GPIO.output(green_LED, GPIO.HIGH
+            GPIO.output(green_LED, GPIO.HIGH)
             print(f"Pin {green_LED} is turned ON.")
     
 finally:
