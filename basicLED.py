@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Buttons
-blue_button= 16
+blue_button= 10
 green_button = 12
 yellow_button = 21
 red_button = 20
