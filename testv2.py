@@ -1,92 +1,52 @@
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
-# References GPIO pins by their physical pin numbers.
+# Set GPIO mode to BCM
 GPIO.setmode(GPIO.BCM)
 
-def print_IO(x): # Print Digital Input/Output Pin(s)
-    state = GPIO.gpio_function(x)
-    print("pin state: ", x)
-        
-def print_Volts(x):
-    voltage = "HIGH" if GPIO.input(x) else "Low"
-    print("Pin voltage: ", x)
+# Define the GPIO pins for the ULN2003 driver
+IN1 = 5
+IN2 = 13
+IN3 = 19
+IN4 = 26
 
-def set_high(x):
-    print("set_high")
-    GPIO.output(i, GPIO.HIGH)
-    state = GPIO.input(i)
-    print(f"pin {i}'s state: {state} ")
-    sleep()
+# Set up the GPIO
+GPIO.setup(IN1, GPIO.OUT)
+GPIO.setup(IN2, GPIO.OUT)
+GPIO.setup(IN3, GPIO.OUT)
+GPIO.setup(IN4, GPIO.OUT)
 
-def set_low(x):
-    print("set_low")
-    GPIO.output(i, GPIO.LOW)
-    state = GPIO.input(i)
-    print(f"pin {i}'s state: {state} ")
-    sleep()
+# Function to rotate the stepper motor one step
+def step(delay, step_sequence):
+    for i in range(4):
+        GPIO.output(IN1, step_sequence[i][0])
+        GPIO.output(IN2, step_sequence[i][1])
+        GPIO.output(IN3, step_sequence[i][2])
+        GPIO.output(IN4, step_sequence[i][3])
+        sleep(delay)
 
-def set_input(x):
-    print("set_input")
-    GPIO.setup(i, GPIO.IN)
-    mode = GPIO.gpio_function(i)
-    print(f"pin {i}'s mode: IN") 
-    sleep()
+# Function to move the stepper motor one step forward
+def step_forward(delay, steps):
+    for _ in range(steps):
+        step(delay, [[1, 0, 0, 1], [1, 0, 0, 0], [1, 1, 0, 0], [0, 1, 0, 0]])
 
-def set_output(x):
-    print("set_output")
-    GPIO.setup(i, GPIO.OUT)
-    mode = GPIO.gpio_function(i)
-    print(f"pin {i}'s mode : OUT")
-    sleep()
-
-
-def sleep():
-    time.sleep(2)
-
-#      12   16   20   21
-#  18  [1]  [2]  [3]  [A]
-#  23  [4]  [5]  [6]  [B]
-#  24  [7]  [8]  [9]  [C]
-#  25  [*]  [0]  [#]  [D]
-
-def find_index(x, y):
-    if x == 18 and y == 12:
-        print("button 1 is pushed")
-        GPIO.setup(13, GPIO.OUT)
-        GPIO.output(13, GPIO.HIGH)
-        sleep()
-        GPIO.setup(13, GPIO.IN)
-        return 0
-    if x == 18 and y == 16:
-        pass
-    if x == 18 and y == 20:
-        pass
-    
-
-leds = [13,19,26]
-rows = [18,23,24,24]    # Top to bottom
-cols = [12,16,20,21]     #left to right
-
+# Function to move the stepper motor one step backward
+def step_backward(delay, steps):
+    for _ in range(steps):
+        step(delay, [[0, 1, 0, 0], [1, 1, 0, 0], [1, 0, 0, 0], [1, 0, 0, 1]])
 
 try:
+    delay = 0.005  # Adjust this value for the delay between steps
     while True:
-        for row_pin in rows:
-            GPIO.setup(row_pin, GPIO.OUT)
-            GPIO.output(row_pin, GPIO.HIGH)
+        # Rotate one revolution forward (clockwise)
+        step_forward(delay, 1000)
+        # Pause for 2 seconds
+        sleep(2)
+        # Rotate one revolution backward (counterclockwise)
+        step_backward(delay, 1000)
+        # Pause for 2 seconds
+        sleep(2)
 
-            for col_pin in cols:
-                GPIO.setup(col_pin, GPIO.OUT)
-                GPIO.output(col_pin, GPIO.LOW)
-                GPIO.setup(col_pin, GPIO.IN)  # Set col_pin as input to detect its state
-                if GPIO.input(col_pin) == GPIO.HIGH:
-                    find_index(row_pin, col_pin)
-            GPIO.output(row_pin, GPIO.LOW)
-            GPIO.setup(row_pin, GPIO.IN)
 except KeyboardInterrupt:
-
+    print("\nExiting the script.")
     GPIO.cleanup()
-#{"pin": 13, "mode": GPIO.OUT, "value": GPIO.HIGH}
-
-
-
