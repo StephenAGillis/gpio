@@ -3,6 +3,7 @@ from time import sleep
 
 # Set GPIO mode to BCM
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 # Define the GPIO pins for the ULN2003 driver
 IN1 = 23
