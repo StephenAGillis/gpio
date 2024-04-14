@@ -15,13 +15,13 @@ def set_seq(a,b,c,d):
     GPIO.output(a, GPIO.HIGH)
     GPIO.output(a, GPIO.HIGH)
 
-def setup_ports(a,b,c,d)
+def setup_ports(a,b,c,d):
     GPIO.setup(a, GPIO.OUT)
     GPIO.setup(b, GPIO.OUT)
     GPIO.setup(c, GPIO.OUT)
     GPIO.setup(d, GPIO.OUT)
 
-def set_low(a,b,c,d)
+def set_low(a,b,c,d):
     GPIO.output(a, GPIO.LOW)
     GPIO.output(b, GPIO.LOW)
     GPIO.output(c, GPIO.LOW)
