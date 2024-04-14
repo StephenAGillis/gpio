@@ -37,7 +37,7 @@ def step_backward(delay, steps):
         step(delay, [[0, 1, 0, 0], [1, 1, 0, 0], [1, 0, 0, 0], [1, 0, 0, 1]])
 
 try:
-    delay = 0.015  # Adjust this value for the delay between steps
+    delay = 0.005  # Adjust this value for the delay between steps
     while True:
         # Rotate one revolution forward (clockwise)
         step_forward(delay, 1000)
