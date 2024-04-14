@@ -11,9 +11,9 @@ d4 = 26
 
 def set_seq(a,b,c,d):
     GPIO.output(a, GPIO.HIGH)
-    GPIO.output(a, GPIO.HIGH)
-    GPIO.output(a, GPIO.HIGH)
-    GPIO.output(a, GPIO.HIGH)
+    GPIO.output(b, GPIO.HIGH)
+    GPIO.output(c, GPIO.HIGH)
+    GPIO.output(d, GPIO.HIGH)
 
 def setup_ports(a,b,c,d):
     GPIO.setup(a, GPIO.OUT)
