@@ -40,11 +40,11 @@ try:
     delay = 0.005  # Adjust this value for the delay between steps
     while True:
         # Rotate one revolution forward (clockwise)
-        step_forward(delay, 1000)
+        step_forward(delay, 100)
         # Pause for 2 seconds
         sleep(2)
         # Rotate one revolution backward (counterclockwise)
-        step_backward(delay, 1000)
+        step_backward(delay, 100)
         # Pause for 2 seconds
         sleep(2)
 
