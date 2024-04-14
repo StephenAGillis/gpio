@@ -9,11 +9,33 @@ d2 = 13
 d3 = 19
 d4 = 26
 
-def set_seq(a,b,c,d):
+def set_seq1(a,b,c,d):
+    
     GPIO.output(a, GPIO.HIGH)
-    GPIO.output(b, GPIO.HIGH)
+    GPIO.output(b, GPIO.LOW)
+    GPIO.output(c, GPIO.LOW)
+    GPIO.output(d, GPIO.HIGH)
+    
+def set_seq2(a,b,c,d):
+    
+    GPIO.output(a, GPIO.LOW)
+    GPIO.output(b, GPIO.LOW)
     GPIO.output(c, GPIO.HIGH)
     GPIO.output(d, GPIO.HIGH)
+
+def set_seq3(a,b,c,d):
+    
+    GPIO.output(a, GPIO.LOW)
+    GPIO.output(b, GPIO.HIGH)
+    GPIO.output(c, GPIO.HIGH)
+    GPIO.output(d, GPIO.LOW)
+    
+def set_seq4(a,b,c,d):
+    
+    GPIO.output(a, GPIO.HIGH)
+    GPIO.output(b, GPIO.HIGH)
+    GPIO.output(c, GPIO.LOW)
+    GPIO.output(d, GPIO.LOW)
 
 def setup_ports(a,b,c,d):
     GPIO.setup(a, GPIO.OUT)
@@ -21,17 +43,21 @@ def setup_ports(a,b,c,d):
     GPIO.setup(c, GPIO.OUT)
     GPIO.setup(d, GPIO.OUT)
 
-def set_low(a,b,c,d):
-    GPIO.output(a, GPIO.LOW)
-    GPIO.output(b, GPIO.LOW)
-    GPIO.output(c, GPIO.LOW)
-    GPIO.output(d, GPIO.LOW)
-
 try:
+    counter = 0
+    
+    
     setup_ports(d1,d2,d3,d4)
     time.sleep(1)
-    set_seq(d1,d2,d3,d4)
-    time.sleep(1)
+    
+    while counter <= 50:
+        set_seq1(d1,d2,d3,d4)
+        set_seq2(d1,d2,d3,d4)
+        set_seq3(d1,d2,d3,d4)
+        set_seq4(d1,d2,d3,d4)
+        time.sleep(1)
+        counter++
+        
     set_low(d1,d2,d3,d4)
 
 finally:
