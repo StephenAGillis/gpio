@@ -5,10 +5,10 @@ from time import sleep
 GPIO.setmode(GPIO.BCM)
 
 # Define the GPIO pins for the ULN2003 driver
-IN1 = 5
-IN2 = 13
-IN3 = 19
-IN4 = 26
+IN1 = 23
+IN2 = 24
+IN3 = 25
+IN4 = 17
 
 # Set up the GPIO
 GPIO.setup(IN1, GPIO.OUT)
@@ -36,16 +36,16 @@ def step_backward(delay, steps):
         step(delay, [[0, 1, 0, 0], [1, 1, 0, 0], [1, 0, 0, 0], [1, 0, 0, 1]])
 
 try:
-    delay = 0.05  # Adjust this value for the delay between steps
+    delay = 0.015  # Adjust this value for the delay between steps
     while True:
         # Rotate one revolution forward (clockwise)
         step_forward(delay, 1000)
         # Pause for 2 seconds
-        sleep(1)
+        sleep(2)
         # Rotate one revolution backward (counterclockwise)
         step_backward(delay, 1000)
         # Pause for 2 seconds
-        sleep(1)
+        sleep(2)
 
 except KeyboardInterrupt:
     print("\nExiting the script.")
