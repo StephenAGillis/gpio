@@ -47,6 +47,12 @@ def setup_ports(a,b,c,d):
     GPIO.setup(c, GPIO.OUT)
     GPIO.setup(d, GPIO.OUT)
 
+def set_low(a,b,c,d):
+    GPIO.output(a, GPIO.LOW)
+    GPIO.output(b, GPIO.LOW)
+    GPIO.output(c, GPIO.LOW)
+    GPIO.output(d, GPIO.LOW)
+
 try:
     counter = 0   
     
