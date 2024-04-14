@@ -56,7 +56,7 @@ try:
         set_seq3(d1,d2,d3,d4)
         set_seq4(d1,d2,d3,d4)
         time.sleep(1)
-        counter++
+        counter += 1
         
     set_low(d1,d2,d3,d4)
 
