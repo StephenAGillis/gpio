@@ -6,10 +6,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 # Define the GPIO pins for the ULN2003 driver
-IN1 = 23
-IN2 = 24
-IN3 = 25
-IN4 = 17
+IN1 = 5
+IN2 = 13
+IN3 = 19
+IN4 = 26
 
 # Set up the GPIO
 GPIO.setup(IN1, GPIO.OUT)
